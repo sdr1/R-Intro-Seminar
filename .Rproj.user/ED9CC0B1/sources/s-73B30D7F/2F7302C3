@@ -1,0 +1,33 @@
+{
+    "id": "2F7302C3",
+    "path": "~/Documents/GitHub/R-Intro-Seminar/r-intro-seminar.Rmd",
+    "project_path": "r-intro-seminar.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1652976546748.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "14,0",
+        "scrollLine": "2",
+        "rmdVisualMode": "false",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "97:64",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "166"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1653069865,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1653069865935,
+    "read_only": false,
+    "read_only_alternatives": []
+}
