@@ -5,6 +5,8 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
+<https://psu-psychology.github.io/psy-525-reproducible-research-2020/how_to/make-website-with-rstudio.html>
+
 # Preliminaries
 
 ## What is the purpose of this guide?
@@ -17,24 +19,34 @@ Before we get to actual coding, it's useful to go over some general principles a
 
 ## Install R and R Studio
 
-Install R <https://cran.r-project.org/>.
+1) Install R <https://cran.r-project.org/>.  MAKE SURE YOU INSTALL THE CORRECT VERSION
+- To tell the type of Mac you have, go to the apple icon in the top left of the screen and click "About This Mac"
+- For an M1 Mac <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.0-arm64.pkg>
+- For an intel based mac <https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg>
+- For Windows <https://cran.r-project.org/bin/windows/base/>
+- For Linuix <https://cran.r-project.org/bin/linux/>
 
-Then R Studio <https://www.rstudio.com/products/rstudio/> which is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
+Then R Studio <https://www.rstudio.com/products/rstudio/download> which is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
+
+If you have a mac you probably also need to install XQuartz <https://www.xquartz.org/>, Xcode <https://apps.apple.com/us/app/xcode/id497799835?mt=12>, and install command line developer tools from within Xcode.  When you open Xcode for the first time there will be an option to do this.  If not, in the terminal type:
+
+xcode-select --install 
 
 ## What is R?
 
-It's a program that allows users to analyze data, write academic papers, create websites, build applications, and tons of other stuff.
+It's a program that allows users to analyze data, write academic papers, create websites, build applications, and tons of other stuff.  I
 
 ## Some Principles of Coding that I use
 
 1)  Organize your files!
 2)  See 1
 3)  Know what you're doing before you do it
-4)  If you don't put comments on your code you will have no idea how it works when you come back to it
+4)  If you don't put comments in your code you will have no idea how it works when you come back to it
 5)  Simple is better - unless you have to optimize something, don't spend hours making something slick and fast
 6)  Don't waste time solving a future problem (i.e. don't make something generic if you don't have to)
-7)  Check every line of code to make sure it works AND it gives you the expected output. This applies doubly to merging data
-8)  When you ignore 7 you will be unhappy.  The [Beware of Mount Stupid](next section) will give you an approximate idea of when you'll ignore coding principles.   
+7)  If you have to do something multiple times, write a function or a loop
+8)  Check every line of code to make sure it works AND it gives you the expected output. This applies doubly to merging data
+9)  When you ignore 8 you will be unhappy.  The [Beware of Mount Stupid](next section) will give you an approximate idea of when you'll ignore coding principles.   
 
 If you take away nothing else from this seminar please organize your files and comment your code.
 
@@ -49,15 +61,15 @@ Computers are fast. But they can only do *exactly* what you tell them. This mean
 
 When you code you will have errors. If you email me every time you get an error both you and I will be very unhappy. I've been coding for over a decade and I still make errors almost every time I code. The main difference between me now and me in 2008 (when I ran my first regressions) is that I'm better at debugging.
 
-So, what do you do: read the error message and then Google it! Look for answers on stack overlfow. Be suspicious of answers that have sudo in them. That stands for "SuperUser do" and can modify restricted files on your computer. Basically, you risk really screwing up your computer.  Sometimes you need to use sudo, but be sure that you really need to.
+So, what do you do: read the error message and then Google it! Look for answers on StackOverlfow. Be suspicious of answers that have sudo in them. That stands for "SuperUser do" and can modify restricted files on your computer. Basically, you risk really screwing up your computer.  Sometimes you need to use sudo, but be sure that you really need to.
 
-For most applications, the data analysis you're doing is extremely common. This means that you are *very* unlikely to have a problem nobody else has ever had before. The first step when you have an error is to read the error message itself. Sometimes this helps. If you can't figure out what it is, Google it. Look for answers from a website called StackOverflow. Your solution will usually be in the top 3 results in any Google search.
+For most applications, the data analysis you're doing is extremely common. This means that you are *very* unlikely to have a problem nobody else has ever had before. 
 
 ## Wait - I want the previous section in list form
 
 Here are steps you can use to resolve an error
 
-1) Read the error.  Like read the whole thing.  It may be red and scary looking but the only way you can begin to get a handle on the error is if you read the whole thing.
+1) Read the error.  Like read the whole thing.  It may be red and scary looking but the only way you can begin to get a handle on the error is if you read the whole thing. 
 
 2) In the beginning you will get a lot of errors because your data is incompatable with what you want to do with it.  For example, you're taking the mean of vector of characters.  Or you have the wrong file path.  Or you forgot to set stringsasfactors to False.  
 
@@ -67,7 +79,9 @@ Here are steps you can use to resolve an error
 
 ...
 
-10) Read the R help files. They're dense and often difficult to read.  My personal philosophy is to use them as a last resort^[Sort of like when an ex says "maybe if you were the last person on earth"]   
+6) Read the R help files. They can be dense and often difficult to read.  My personal philosophy is to use them as a last resort.  
+
+Exer
 
 ## What if I have a mac that runs on an M1 chip and need to do something with Java?
 
@@ -82,6 +96,7 @@ See [Wait - I want the previous section in list form](the prior list).  Also goo
 ## I don't understand how x works 
 
 1) Look for vignettes - these are R documents that show how packages work
+  - e.g., <https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html>
 2) Use the code from the vignette on the fake data 
 3) With a pencil and paper, compare the variables from the fake data to your data
 
@@ -89,6 +104,7 @@ See [Wait - I want the previous section in list form](the prior list).  Also goo
 
 There are a million guides to R/stats Here are some of my favorites:
 
+-   <https://rafalab.github.io/dsbook/getting-started.html>
 -   <https://egap.org/resource/10-things-to-know-about-reading-a-regression-table/>\
 -   <https://stats.idre.ucla.edu/stata/output/regression-analysis/>
 -   *Mastering Metrics* and *Mostly Harmless Econometrics* by Angrist and Pische
@@ -96,8 +112,10 @@ There are a million guides to R/stats Here are some of my favorites:
 
 # An Intro to R Studio
 
+![Example R Studio setup](rstudio-environment.png)
 
 ## installing packages
+
 
 ## Finally, some code!
 ```{r setup, include=T}
@@ -120,6 +138,10 @@ library(kableExtra)
 
 ## Exercise 1
 Install the packages tidylog, magrittr, stringr, and tidyr
+
+## A Few Basic Commands
+
+**$** - allows you to select a variable
 
 ## The Tidyverse
 
