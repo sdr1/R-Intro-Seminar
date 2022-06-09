@@ -7,7 +7,7 @@ output:
       highlight: zenburn
       toc: true
       toc_float: true
-      code_folding: hide
+      code_folding: show
       number_sections: true
 
 ---
@@ -1278,6 +1278,12 @@ The interpret ion of these coefficients isn't straightforward.  See <https://sta
 See <https://tutorials.quanteda.io/>.
 
 # Links
+# Links 
+
+The next section is in bold.
+
+[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
+
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
 [2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)

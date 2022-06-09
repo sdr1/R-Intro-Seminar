@@ -88,10 +88,15 @@ Last) Read the R help files. In a normal list this would be 5, but I view these 
 R is part of your data analysis workflow. It's a matter of personal taste (e.g., me using R Studio). Try not to hardwire your workflow into your product (e.g your analysis). This means you should keep file names out of your product.
 
 # Links 
+
+The next section is in bold.
+
+[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
+
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
 [2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
 
-[3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
+[**3 - R Studio Intro**](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
 
 [4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)

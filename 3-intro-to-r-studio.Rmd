@@ -8,7 +8,7 @@ output:
       toc: true
       toc_float: true
       code_folding: hide
-      number_sections: false
+      number_sections: true
 
 ---
 
@@ -94,11 +94,16 @@ Adopt conventions that you use throughout. Make the names descriptive and give t
 
 3)  Within R have a variable name convention. Since you can't use dashes (-) in file names, either use underscores or periods. If you must have a variable that begins with a number, you will always have to encase it in \`\` (aka an acute/backtick, left quote, or an open quote) marks
 
-# Links
+# Links 
+
+The next section is in bold.
+
+[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
+
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
 [2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
 
 [3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
 
-[4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)
+[**4 - Basic Coding**](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)

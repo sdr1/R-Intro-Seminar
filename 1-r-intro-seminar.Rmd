@@ -19,20 +19,6 @@ output:
       #  countIncrementalSlides: false
 ---
 
-# Preliminaries
-
-## What is the purpose of this guide?
-
-To give you a basic understanding of how data is stored in a computer, how R works, how to compute summary statistics, and basic regressions. Since this is a basic guide, assume an asterisk after almost every line.
-
-## How the guide is structured
-
-Before we get to actual coding, it's useful to go over some general principles about coding and debugging. If you only care about the actual coding skip to the section called [An Intro to R Studio].
-
-## What is R?
-
-It's a program that allows users to analyze data, write academic papers, create websites, build applications, and tons of other stuff.
-
 # Install R and R Studio
 
 1)  Install R <https://cran.r-project.org/>. MAKE SURE YOU INSTALL THE CORRECT VERSION.
@@ -72,9 +58,14 @@ See <https://mac.r-project.org/tools/>
 Are you absolutely sure you want to do this? If so, go here <https://www.latex-project.org/get/>.
 
 # Links 
+
+The next section is in bold.
+
+[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
+
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
-[2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
+[**2 - Coding Principles and Debugging** ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
 
 [3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
 
