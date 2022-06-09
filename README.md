@@ -1,4 +1,4 @@
-# R-Intro-Seminar
+# R Intro Seminar
 
 [0 - Course Home](https://sdr1.github.io/R-Intro-Seminar/)
 
