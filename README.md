@@ -18,7 +18,7 @@ It’s a program that allows users to analyze data, write academic papers, creat
 
 # Seminar Links
 
-[0 - Course Home](https://sdr1.github.io/R-Intro-Seminar/)
+[**0 - Course Home**](https://sdr1.github.io/R-Intro-Seminar/)
 
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
