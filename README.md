@@ -1,10 +1,16 @@
+# R Intro Seminar Guide
+
+The links to the course sections are below, but it's worth reading this brief intro to understand how I've organized it.
+
 *What is the purpose of this guide?*
 
-To give you a basic understanding of how data is stored in a computer, how R works, how to compute summary statistics, and basic regressions. Since this is a basic guide, assume an asterisk after almost every line.
+To give you a basic understanding of how data is stored in a computer, how R works, how to compute summary statistics, and basic regressions. Since this is a simple guide, assume an asterisk after almost every line.   
 
 *How the guide is structured*
 
-Before we get to actual coding, it’s useful to go over some general principles about coding and debugging. If you only care about the actual coding skip to [4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html).  
+Before we get to actual coding, it’s useful to go over some general principles about coding and debugging.  The best coders are the best debuggers (and the best googlers).  For a little up front investment, these will save you hours and hours on the back end.  I know this because I've ignored most of the advice in this guide and have come to regret it.
+
+If you only care about the actual coding skip to [4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html).  
 
 *What is R?*
 
