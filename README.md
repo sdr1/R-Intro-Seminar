@@ -23,3 +23,12 @@ There are a million guides to R/stats Here are some of my favorites:
 -   <https://stats.idre.ucla.edu/stata/output/regression-analysis/>
 -   *Mastering Metrics* and *Mostly Harmless Econometrics* by Angrist and Pische
     -   The "Mostly" in "Mostly Harmless" is a lie but it's an amazing book
+
+# This Course Is Boring, Give Me Something Better To Do
+
+- [Liz Climo](https://instagram.com/lizclimo?igshid=YmMyMTA2M2Y=)
+- [Poorly Drawn Lines](https://poorlydrawnlines.com/)
+- [Strange Planet](https://www.instagram.com/nathanwpylestrangeplanet/?hl=en)
+- [XKCD](https://xkcd.com/)
+- [Mr. Lovenstein](https://www.instagram.com/mrlovenstein/?hl=en)
+- [Wawa Wiwa Comics](https://www.instagram.com/wawawiwacomics/)
