@@ -1277,7 +1277,6 @@ The interpret ion of these coefficients isn't straightforward.  See <https://sta
 
 See <https://tutorials.quanteda.io/>.
 
-# Links
 # Links 
 
 The next section is in bold.
@@ -1292,7 +1291,7 @@ The next section is in bold.
 
 [4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)
 
-# Appendix I: Answer to Exercise 1
+# Appendix 
 
 ## Exercise 1: Answer
 
