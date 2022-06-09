@@ -1,5 +1,7 @@
 # R-Intro-Seminar
 
+[0 - Course Home](https://sdr1.github.io/R-Intro-Seminar/)
+
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
 [2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
