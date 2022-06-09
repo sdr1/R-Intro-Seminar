@@ -50,27 +50,20 @@ To install multiple packages, use the following code:
 
 ```{r install multiple packages, eval = FALSE}
 requires <- c("tidyverse", # tidyverse includes dplyr and ggplot2
-              "ggridges",
-              "broom",
+              "tidylog", # gives output about dplyr
+              "ggridges", # nice plots
+              "broom", # easier to work with model output
               "tidytext",
-              "tm",
-              "stm",
-              "wordcloud",
-              "grid",
-              "gridExtra",
-              "magrittr",
-              "foreign",
-              "readstata13",
-              "tidytext",
-              "stm",
-              "topicmodels",
-              "textfeatures",
-              "cleanNLP", ## https://statsmaths.github.io/cleanNLP/
-              "maps",
-              "sf",
-              "rvest",
-              "remotes",
-              "knitr")
+              "quanteda", # text analysis
+              "grid", # options for plots
+              "gridExtra",# options for plots
+              "magrittr", # %<>% object
+              "maps", # maps
+              "rvest", # for webscraping
+              "knitr", # making RMDs
+              "kable", # rmd expansion
+              "kableExtra"
+              )
 
 ## Install any you don't have
 to_install <- c(requires %in% rownames(installed.packages()) == FALSE)
@@ -630,6 +623,8 @@ quantiles give you a sense of how the data is distributed. There are no hard and
 
 standard deviation is a measure of how a variable is spread. The formula is $\sigma = \sqrt{\sum{(x_i-\mu)^2}/n}$. If your data is all the same number, the standard deviation will be 0 (and you should find new data).
 
+Note the pipe **%>%** that connects the data object mtcars to to the command that changes the data **summarize**
+
 ```{r Summary stats}
 mtcars %>% 
   summarise(
@@ -759,6 +754,8 @@ There are way too many themes to review here but you can change the themes as mu
 As a sidenote: since your goal in plotting is to make the data accessible to others, you should consider using themes that are accessible to those who are color blind. This is not a small population! See e.g., <https://www.sciencedirect.com/science/article/pii/S2352304215000215>
 
 Below I'm going to show you 7 plots using the same data.  Some are useful, some aren't. Recognizing which plots are confusing is important.
+
+**NOTE: INSIDE GGPLOT THE PIPE (%>%) WILL CAUSE AN ERROR, USE A + SIGN**
 
 ```{r}
 if(c("ggthemes") %!in% installed.packages()){install.packages('ggthemes')}
@@ -949,7 +946,31 @@ nycflights13::weather %>%
   ggplot( aes(x = temp, y = as.character(month), fill = ..x..) ) +
   geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01) +
   scale_fill_viridis_c() +
-  labs(title = "Temperatures at LGA", fill = "Temp. [F]")
+  labs(title = "Temperatures at LGA", fill = "Temp. [F]") + 
+  xlab("Temperature F") +
+  ylab("Month") +
+  theme_minimal()
+```
+
+What gives here?  Note that the y axis is out of order - this happens sometimes when numbers are converted to characters.
+
+How did I solve this issue?  I googled "order months in ggplot axis" and clicked on <https://stackoverflow.com/questions/36020146/how-can-i-order-the-months-chronologically-in-ggplot2-short-of-writing-the-month>.  When I did that I noticed that December was on top and January was on the bottom.  So I googled "ggridges reverse order" and clicked on <https://community.rstudio.com/t/reverse-order-of-categorical-y-axis-in-ggridges-ggplot2/2273> and found that I could do y =  fct_rev(month).
+
+
+```{r}
+library(ggridges)
+nycflights13::weather %>%
+  filter(origin == "LGA") %>%
+  mutate(
+  month = factor(month.abb[month], levels = month.abb)
+  ) %>%
+  ggplot( aes(x = temp, y =  fct_rev(month), fill = ..x..) ) +
+  geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01) +
+  scale_fill_viridis_c() +
+  labs(title = "Temperatures at LGA", fill = "Temp. [F]") + 
+  xlab("Temperature F") +
+  ylab("Month") +
+  theme_minimal()
 ```
 
 **Searching for weirdness in your data**
@@ -1258,7 +1279,7 @@ Step 7: check the regression diagnostics
 ```{r}
 glance(m1)
 ```
-## Logistic Regression
+# Logistic Regression
 
 See <https://stats.oarc.ucla.edu/r/dae/logit-regression/> 
 
@@ -1273,7 +1294,7 @@ mylogit %>%
 
 The interpret ion of these coefficients isn't straightforward.  See <https://stats.oarc.ucla.edu/stata/faq/how-do-i-interpret-odds-ratios-in-logistic-regression/>
 
-## Text as Data
+# Text as Data
 
 See <https://tutorials.quanteda.io/>.
 
