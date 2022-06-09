@@ -1,4 +1,21 @@
 # R-Intro-Seminar
  Intro to R
 
-[1 - Class](https://sdr1.github.io/R-Intro-Seminar/r-intro-seminar.html)
+[1 - Class](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
+[2 - Coding Principles and Debugging ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
+[3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
+[4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)
+
+
+# Other Guides
+
+There are a million guides to R/stats Here are some of my favorites:
+
+-   For another general intro to R by Devin Judge-Lord (an awesome political scientist) <https://github.com/judgelord/PS811>
+-   <https://bookdown.org/jgscott/DSGI/>
+-   <https://rafalab.github.io/dsbook/getting-started.html>
+-   <https://psu-psychology.github.io/psy-525-reproducible-research-2020/how_to/make-website-with-rstudio.html>
+-   <https://egap.org/resource/10-things-to-know-about-reading-a-regression-table/>\
+-   <https://stats.idre.ucla.edu/stata/output/regression-analysis/>
+-   *Mastering Metrics* and *Mostly Harmless Econometrics* by Angrist and Pische
+    -   The "Mostly" in "Mostly Harmless" is a lie but it's an amazing book
