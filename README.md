@@ -1,5 +1,4 @@
 # R-Intro-Seminar
- Intro to R
 
 [1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
 
