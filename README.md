@@ -1,4 +1,16 @@
-# R Intro Seminar
+*What is the purpose of this guide?*
+
+To give you a basic understanding of how data is stored in a computer, how R works, how to compute summary statistics, and basic regressions. Since this is a basic guide, assume an asterisk after almost every line.
+
+*How the guide is structured*
+
+Before we get to actual coding, it’s useful to go over some general principles about coding and debugging. If you only care about the actual coding skip to [4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html).  
+
+*What is R?*
+
+It’s a program that allows users to analyze data, write academic papers, create websites, build applications, and tons of other stuff.
+
+# Seminar Links
 
 [0 - Course Home](https://sdr1.github.io/R-Intro-Seminar/)
 
