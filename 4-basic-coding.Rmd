@@ -1298,6 +1298,10 @@ The interpret ion of these coefficients isn't straightforward.  See <https://sta
 
 See <https://tutorials.quanteda.io/>.
 
+# K-means Clustering
+
+See <https://uc-r.github.io/kmeans_clustering>
+
 # Links 
 
 The next section is in bold.

@@ -14,19 +14,19 @@ output:
 
 # An Intro to R Studio
 
-### R Environment
+## R Environment
 
 This is what your home window likely (there are always new versions of R studio) looks like
 
 ![Example R Studio setup](rstudio-environment.png)
 
-### Source Editor
+## Source Editor
 
 ![Source Editor](rstudio-source-editor.png)
 
 Write and Run your code here. The way to do it is: 1) Highlight the code you wish to run 2) On a mac, press **command** then **enter** 3) Results will appear in the command window
 
-### Console
+## Console
 
 ![Example R Studio setup](rstudio-run-code.png)
 
@@ -38,7 +38,7 @@ DON'T WRITE CODE HERE. If you do the following is likely to happen.
 2)  You won't be able to replicate it because you coded the whole thing on the fly
 3)  You'll search through the history tab (top right) for a long time
 
-### Files/Plots/Packages/Help/Viewer
+## Files/Plots/Packages/Help/Viewer
 
 ![Viewer](rstudio-files-help-packages.png)
 
@@ -48,7 +48,7 @@ The "[v]iewer pane can only be used for local web content" such as shiny apps. S
 
 If you type command + shift + F4 you can use the viewer pane for RMD/Shiny documents
 
-### Workspace Browser
+## Workspace Browser
 
 You'll usually have:
 

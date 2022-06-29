@@ -24,13 +24,13 @@ output:
 1)  Install R <https://cran.r-project.org/>. MAKE SURE YOU INSTALL THE CORRECT VERSION.
 
 -   To tell the type of Mac you have, go to the apple icon in the top left of the screen and click "About This Mac"
--   For an M1 Mac <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.0-arm64.pkg>
--   For an intel based mac <https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg>
+-   For an M1 Mac <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.1-arm64.pkg>
+-   For an intel based mac <https://cran.r-project.org/bin/macosx/base/R-4.2.1.pkg>
 -   For Windows <https://cran.r-project.org/bin/windows/base/>
       - If you run into issues, start here <https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-install-R-for-Windows_003f>
 -   For Linux <https://cran.r-project.org/bin/linux/>
 
-2) Install R Studio <https://www.rstudio.com/products/rstudio/download> which is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
+2) Install R Studio <https://www.rstudio.com/products/rstudio/download>.  I use the free R Studio Desktop version.  You can use other versions if you want, but, to the extent that they may be different, my ability to help you troubleshoot will be limited.  R Studio is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
 
 ## Additional Mac Components
 
