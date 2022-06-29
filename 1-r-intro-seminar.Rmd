@@ -27,19 +27,35 @@ output:
 -   For an M1 Mac <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.0-arm64.pkg>
 -   For an intel based mac <https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg>
 -   For Windows <https://cran.r-project.org/bin/windows/base/>
--   For Linuix <https://cran.r-project.org/bin/linux/>
+      - If you run into issues, start here <https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-install-R-for-Windows_003f>
+-   For Linux <https://cran.r-project.org/bin/linux/>
 
-Then install R Studio <https://www.rstudio.com/products/rstudio/download> which is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
+2) Install R Studio <https://www.rstudio.com/products/rstudio/download> which is a integrated development environment for R. "It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022)."
 
 ## Additional Mac Components
 
 If you have a mac you likely need to install XQuartz <https://www.xquartz.org/>, Xcode <https://apps.apple.com/us/app/xcode/id497799835?mt=12>, and install command line developer tools from within Xcode. When you open Xcode for the first time there will be an option to do this. If not, in the terminal type:
 
-If you don't know how to get to the terminal, you can search for it in Applications, Finder, or hit shift + command + u and then find the terminal application.
-
 xcode-select --install
 
-# Integrating with Other Programming Languages
+If you don't know how to get to the terminal, you can search for it in Applications, Finder, or hit shift + command + u and then find the terminal application.
+
+# Links 
+
+The next section is in bold.
+
+[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
+
+[1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
+
+[**2 - Coding Principles and Debugging** ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
+
+[3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
+
+[4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)
+
+
+# Appendix 1: Integrating with Other Programming Languages
 
 You may wish to use other languages in addition to R. R and R Studio can do this, although sometimes the process of integrating another programming language takes too long and you're better of just using the languages separately.
 
@@ -55,18 +71,6 @@ See <https://mac.r-project.org/tools/>
 
 ## Latex
 
-Are you absolutely sure you want to do this? If so, go here <https://www.latex-project.org/get/>.
+See <https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html>.
 
-# Links 
-
-The next section is in bold.
-
-[0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
-
-[1 - Installing R and R Studio](https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html)
-
-[**2 - Coding Principles and Debugging** ](https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html)
-
-[3 - R Studio Intro](https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html)
-
-[4 - Basic Coding](https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html)
+For the full latex version, go here <https://www.latex-project.org/get/>.

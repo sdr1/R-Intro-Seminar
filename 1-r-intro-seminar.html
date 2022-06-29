@@ -11,7 +11,7 @@
 
 <meta name="author" content="Steven Rashin" />
 
-<meta name="date" content="2022-06-09" />
+<meta name="date" content="2022-06-29" />
 
 <title>Unit 1: Installing R</title>
 
@@ -1556,7 +1556,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Unit 1: Installing R</h1>
 <h4 class="author">Steven Rashin</h4>
-<h4 class="date">2022-06-09</h4>
+<h4 class="date">2022-06-29</h4>
 
 </div>
 
@@ -1570,19 +1570,33 @@ div.tocify {
 <li>To tell the type of Mac you have, go to the apple icon in the top left of the screen and click “About This Mac”</li>
 <li>For an M1 Mac <a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.0-arm64.pkg" class="uri">https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.0-arm64.pkg</a></li>
 <li>For an intel based mac <a href="https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg" class="uri">https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg</a></li>
-<li>For Windows <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></li>
-<li>For Linuix <a href="https://cran.r-project.org/bin/linux/" class="uri">https://cran.r-project.org/bin/linux/</a></li>
+<li>For Windows <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a>
+<ul>
+<li>If you run into issues, start here <a href="https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-install-R-for-Windows_003f" class="uri">https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-install-R-for-Windows_003f</a></li>
+</ul></li>
+<li>For Linux <a href="https://cran.r-project.org/bin/linux/" class="uri">https://cran.r-project.org/bin/linux/</a></li>
 </ul>
-<p>Then install R Studio <a href="https://www.rstudio.com/products/rstudio/download" class="uri">https://www.rstudio.com/products/rstudio/download</a> which is a integrated development environment for R. “It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022).”</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Install R Studio <a href="https://www.rstudio.com/products/rstudio/download" class="uri">https://www.rstudio.com/products/rstudio/download</a> which is a integrated development environment for R. “It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management (R Stuido 2022).”</li>
+</ol>
 <div id="additional-mac-components" class="section level2">
 <h2>Additional Mac Components</h2>
 <p>If you have a mac you likely need to install XQuartz <a href="https://www.xquartz.org/" class="uri">https://www.xquartz.org/</a>, Xcode <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12" class="uri">https://apps.apple.com/us/app/xcode/id497799835?mt=12</a>, and install command line developer tools from within Xcode. When you open Xcode for the first time there will be an option to do this. If not, in the terminal type:</p>
-<p>If you don’t know how to get to the terminal, you can search for it in Applications, Finder, or hit shift + command + u and then find the terminal application.</p>
 <p>xcode-select –install</p>
+<p>If you don’t know how to get to the terminal, you can search for it in Applications, Finder, or hit shift + command + u and then find the terminal application.</p>
 </div>
 </div>
-<div id="integrating-with-other-programming-languages" class="section level1">
-<h1>Integrating with Other Programming Languages</h1>
+<div id="links" class="section level1">
+<h1>Links</h1>
+<p>The next section is in bold.</p>
+<p><a href="https://sdr1.github.io/R-Intro-Seminar">0 - Project Home</a></p>
+<p><a href="https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html">1 - Installing R and R Studio</a></p>
+<p><a href="https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html"><strong>2 - Coding Principles and Debugging</strong></a></p>
+<p><a href="https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html">3 - R Studio Intro</a></p>
+<p><a href="https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html">4 - Basic Coding</a></p>
+</div>
+<div id="appendix-1-integrating-with-other-programming-languages" class="section level1">
+<h1>Appendix 1: Integrating with Other Programming Languages</h1>
 <p>You may wish to use other languages in addition to R. R and R Studio can do this, although sometimes the process of integrating another programming language takes too long and you’re better of just using the languages separately.</p>
 <div id="java-with-m1-macs" class="section level2">
 <h2>Java (with M1 Macs)</h2>
@@ -1595,17 +1609,9 @@ div.tocify {
 </div>
 <div id="latex" class="section level2">
 <h2>Latex</h2>
-<p>Are you absolutely sure you want to do this? If so, go here <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a>.</p>
+<p>See <a href="https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/install-latex.html</a>.</p>
+<p>For the full latex version, go here <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a>.</p>
 </div>
-</div>
-<div id="links" class="section level1">
-<h1>Links</h1>
-<p>The next section is in bold.</p>
-<p><a href="https://sdr1.github.io/R-Intro-Seminar">0 - Project Home</a></p>
-<p><a href="https://sdr1.github.io/R-Intro-Seminar/1-r-intro-seminar.html">1 - Installing R and R Studio</a></p>
-<p><a href="https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html"><strong>2 - Coding Principles and Debugging</strong></a></p>
-<p><a href="https://sdr1.github.io/R-Intro-Seminar/3-intro-to-r-studio.html">3 - R Studio Intro</a></p>
-<p><a href="https://sdr1.github.io/R-Intro-Seminar/4-basic-coding.html">4 - Basic Coding</a></p>
 </div>
 
 

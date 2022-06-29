@@ -32,6 +32,9 @@ Computers are fast. But they can only do *exactly* what you tell them. This mean
 5)  Simple is better - unless you have to optimize something, don't spend hours making something slick and fast
 6)  Don't waste time solving a future problem (i.e. don't make something generic if you don't have to)
 7)  If you have to do something multiple times, write a function or a loop
+
+![This is a good coding principle, but also just and excuse to use this gif](python-loop.gif)
+
 8)  Check every line of code to make sure it works AND it gives you the expected output. This applies doubly to merging data
 9)  When you ignore 8 you will be unhappy.
 10) Always be curious about your data. Investigate abnormalities.
