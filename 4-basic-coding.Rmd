@@ -111,7 +111,7 @@ At the most basic level, data is a piece of information about something. For our
 
 ## What does data look like?
 
-Think of an excel spreadsheet.  Below I present a pre-installed dataset called mtcars that is included with every installation of R.  It was "extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models)."<https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars>
+Think of an excel spreadsheet.  Below I present a pre-installed dataset called mtcars that is included with every installation of R.  It was "extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models)." <https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars>
 
 ```{r}
 library(tidyverse)
@@ -273,7 +273,7 @@ See <https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures
 
 ### Exercise
 
-Why will the following cause an error? To figure it out, recall the steps from [Debugging Steps]
+Why will the following cause an error? To figure it out, recall the steps from <https://sdr1.github.io/R-Intro-Seminar/2-intro-to-coding-debugging.html#Debugging>
 
 ```{r, eval = F}
 made_up_data <- 
@@ -635,6 +635,43 @@ apply_fuzzy_match(df_a = example_a, col_in_a = "org", df_b = example_b, col_in_b
 
 ```
 
+# Loops and Functions
+
+You'll likely need to create functions and loops to analyze/parse data.
+
+Here is the structure of a basic for loop.  We loop over the numbers 32 to 100, and, for each element of the loop apply the formula to convert Fahrenheit into Celsius.
+
+```{r}
+
+loop_over_this <- 32:100 # you can experiment with any numeric range
+
+# making C a blank list here
+C <- list()
+
+for(i in loop_over_this){
+  # What are you looping over
+  print(i)
+  # If we pretend that the i's are degrees Fahrenheit and we want to convert them into Celsius we can do the following
+  C[i] <- (i - 32) * 5/9
+}
+
+tibble(Fahrenheit = loop_over_this,
+       Celsius = unlist(C))
+```
+
+We can also do this as a function.
+
+```{r}
+
+F_to_C_Converter <- function(Fahrenheit){
+  C = (Fahrenheit - 32) * 5/9
+  return(C)
+}
+
+F_to_C_Converter(77)
+F_to_C_Converter(1:100)
+```
+
 # Summary Statistics
 
 Once you have data you need to describe it so both you and your audience know what it is. Below are some useful summary statistics.
@@ -653,6 +690,7 @@ standard deviation is a measure of how a variable is spread. The formula is $\si
 
 Note the pipe **%>%** that connects the data object mtcars to to the command that changes the data **summarize**
 
+Dplyr makes summarizing across one variable moderatly easy.
 ```{r Summary stats}
 mtcars %>% 
   summarise(
@@ -665,23 +703,43 @@ mtcars %>%
             Q99 = quantile(mpg, 0.99, na.rm = T),
             max = max(mpg),
             sd = sd(mpg)) %>%
-  #' This stuff below just makes the data above displacy nicely for you, its completely unnecessary for most uses.
+  #' This stuff below just makes the data above display nicely for you, its completely unnecessary for most uses.
   kable(digits = 2) %>%
   kable_styling(bootstrap_options = c("striped", "hover"))  %>%
   scroll_box(width = "900px", height = "200px")
 ```
 
-Skim is a great package for summarizing variables.
+Suppose, however, you wanted to summarize across multiple variables.  dplyr makes this a pain. The psych library, however, makes it a little easier.  Just use the following code.  The key here is that data.frame() allows us to keep the variable names.  Without it, we wouldn't have names for the variables.
 
-```{r code for summarizing multiple variables}
-mtcars %>%
-  select(mpg, cyl, disp) %>%
-  skimr::skim()
+```{r}
+storms %>%
+  select_if(is.numeric) %>%
+  psych::describe(quant = c(0.25, 0.75, 0.90), check=TRUE) %>%
+  data.frame() %>%
+  rownames_to_column(var = "name") %>%
+  tibble() %>%
+  select(name, n, min, Q0.25, median, mean, Q0.75, max, se) %>%
+  mutate(across(where(is.numeric), round, 1)) 
 ```
 
+Skim is a great package for summarizing variables - unless you need a variable they don't have.  Then good luck. See <https://cran.r-project.org/web/packages/skimr/vignettes/extending_skimr.html>
+
+```{r code for summarizing multiple variables}
+library(skimr)
+storms %>%
+  skimr::skim() %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling(
+    bootstrap_options = "striped", # several design options
+    full_width = FALSE, # defaults to TRUE
+    position = "center", # where is it positioned?
+    fixed_thead = TRUE # whether header is fixed when scrolling through -- only for longer tables
+  ) %>% 
+  kableExtra::column_spec(1, bold = TRUE, border_right = TRUE) # column specifications can be easily modified
+
+```
 
 **Beware**
-
 
 ![Anscombe's quartet](anscombe-quartet.png)
 
@@ -761,7 +819,7 @@ nycflights13::flights %>%
 
 ## Exercise
 
-Take a data set, figure out how the variables are stored, and give me the median, mean, standard deviation, and 95th percentile of hlth. hlth is the processed version of health. To see the difference between the two, just swap them out in the exercise below and you'll notice a difference.
+Take a data set, figure out how the variables are stored, and give me the median, mean, standard deviation, 75th and 95th percentile of hlth. hlth is the processed version of health. To see the difference between the two, just swap them out in the exercise below and you'll notice a difference.
 
 Download the data from <http://www.masteringmetrics.com/wp-content/uploads/2021/04/Data.zip>. Load it using haven::read_dta("INSERT FILE PATH HERE")
 
@@ -773,12 +831,16 @@ NHIS <- haven::read_dta("Data/NHIS2009_clean.dta")
 # see if data is numeric or not.  If not, will need to convert
 lapply(X = NHIS, FUN = class)
 
-NHIS %>%
-  summarise(
-    mean = mean(hlth),
-    median = quantile(hlth, 0.5, na.rm = T),
-    Q95 = quantile(hlth, 0.95, na.rm = T),
-    sd = sd(hlth)) 
+NHIS %>%  
+  tibble() %>%
+  select(hlth, educ) %>%
+  psych::describe(quant = c(0.75, 0.95), check=TRUE) %>%
+  data.frame() %>%
+  rownames_to_column(var = "name") %>%
+  tibble() %>%
+  select(name, n, median, mean, sd, Q0.75, Q0.95) %>%
+  mutate(across(where(is.numeric), round, 1)) 
+
 ```
 
 # Plotting
