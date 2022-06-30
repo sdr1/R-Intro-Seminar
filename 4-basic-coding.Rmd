@@ -54,7 +54,7 @@ requires <- c("tidyverse", # tidyverse includes dplyr and ggplot2
               "ggridges", # nice plots
               "broom", # easier to work with model output
               "tidytext",
-              "quanteda", # text analysis
+              # "quanteda", # text analysis, good to install but not necessary for this tutorial
               "grid", # options for plots
               "gridExtra",# options for plots
               "magrittr", # %<>% object
@@ -107,17 +107,17 @@ Here's the answer [Exercise 1: Answer]
 
 # A Brief Guide to Data
 
-## What is data?
-
 At the most basic level, data is a piece of information about something. For our purposes, data can be viewed as a numerical representation of some phenomenon. For example, the heights of NBA players, the GDP of OPEC countries from 1999-2015, etc...
 
 ## What does data look like?
 
-This is a sample from a dataset called mtcars that is included in R.  It was "extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models)."<https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars>
+Think of an excel spreadsheet.  Below I present a pre-installed dataset called mtcars that is included with every installation of R.  It was "extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models)."<https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars>
 
 ```{r}
 library(tidyverse)
 library(kableExtra)
+
+# Note that the kable stuff just makes the output look nicer on the website
 
 knitr::kable(mtcars, digits = 2) %>%
   kable_styling(bootstrap_options = c("striped", "hover"))  %>%
@@ -132,13 +132,17 @@ Mostly online. Sometimes you'll create it yourself (like in a Bio/Chem lab) but,
 
 Hahahaha. No. Almost never.
 
-**Even if it's from a published paper?**
+**Even if it's from a published paper/reputable website like Open Secrets?**
 
 Yes.
 
+**Even your papers?**
+
+Look, do you want to fight or do you want to continue the tutorial?
+
 ## How is data stored?
 
-There are a variety of formats - the most common are CSV (comma separated values), xls/xlsx (Excel spreadsheets), .dta (STATA), .tab (tab delimited), and sqlite/sql (databases). You always want to pay attention to the file ending as different endings require different strategies to load the data. The most basic forms, spreadsheets (csv/xls/xlsx) can be opened in a program like Excel/Google Sheets/Numbers.
+There are a variety of formats - the most common are CSV (comma separated values), xls/xlsx (Excel spreadsheets), .dta (STATA), .tab (tab delimited), JSON (JavaScript Object Notation), and sqlite/sql (databases). You always want to pay attention to the file ending as different endings require different strategies to load the data. The most basic forms, spreadsheets (csv/xls/xlsx) can be opened in a program like Excel/Google Sheets/Numbers.
 
 ## Where on your computer is data stored?
 
@@ -154,7 +158,7 @@ Per my rant about organization above you SHOULD put the data in a folder called 
 
 ## What is the first thing I do when I download data?
 
-Read the codebook. Here is one codebook for a dataset that comes with R: <https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html>
+Read the codebook. Here is one codebook for the mtcars I mentioned above: <https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html>
 
 ## What if there is no codebook?
 
@@ -304,7 +308,7 @@ tibble(made_up_data)
 
 How is ID stored?  
 
-## The Tidyverse
+# The Tidyverse
 
 This is a group of packages that use a common grammar - i.e. you can do many things using the same components. In general, it's very fast and capable. See <https://www.tidyverse.org/>.
 
@@ -350,12 +354,15 @@ storms %>%
 ```
 
 ### Exercise
+The best way to do these is to type them into your console while following along.
 
-1)  Take the starwars dataset from the dplyr package and find the tallest character by hair color.
+1)  Look at the starwars dataset from the dplyr package 
 
-2)  What is going on with characters with black hair? Some data is missing so dplyr doesn't know how to interpret a missing value, hence the NA. To get the tallest character without regard for missing data (which you should always be aware of), add the option na.rm = T to max. So max becomes max( , na.rm = T).
+2)  Find the tallest character by hair color
 
-3)  What is going on with unknown hair color?
+3)  What is going on with characters with black hair? Some data is missing so dplyr doesn't know how to interpret a missing value, hence the NA. To get the tallest character without regard for missing data (which you should always be aware of), add the option na.rm = T to max. So max becomes max( , na.rm = T).
+
+4)  What is going on with unknown hair color?
 
 ```{r Exercise 3}
 library(tidyverse)
@@ -363,10 +370,31 @@ library(tidyverse)
 # First look at the dataset
 starwars
 
+# Tallest by hair color
 starwars %>%
   group_by(hair_color) %>%
+  summarise(tallest = max(height)) %>%
+  arrange(tallest)
+
+# Subset by black hair and select name and height
+starwars %>% 
+  filter(hair_color == "black") %>%
+  select(name, height)
+
+# Finn's height is NA.  Google says his height is 5.8 or 172 cm.  So an error
+# so redo with na.rm to remove the nas
+starwars %>%
+  group_by(hair_color) %>%
+  # THE na.rm = T is the key part 
   summarise(tallest = max(height, na.rm = T)) %>%
   arrange(tallest)
+
+# Now figure out what's up with unknown hair color 
+starwars %>% 
+  filter(hair_color == "unknown") %>%
+  select(name, height)
+
+# Now google it ... and that makes sense
 ```
 
 # Loading Data
@@ -651,7 +679,9 @@ mtcars %>%
   skimr::skim()
 ```
 
+
 **Beware**
+
 
 ![Anscombe's quartet](anscombe-quartet.png)
 
@@ -663,7 +693,9 @@ The following has the same mean, median, and variance even though they are from 
 
 Sometimes you want to summarize data by group. dplyr makes this easy with the group_by() function.
 
-Below, using the nycflights13 - all flights in and out of NYC in 2013 - data, I show you how to get tallies by manufacturer.
+Below, using the nycflights13 - all flights in and out of NYC in 2013 - data, let's walk through a few basic data summarization tasks.  
+
+First, let's get tallies of manufacturers. 
 
 ```{r}
 nycflights13::planes %>%
@@ -671,6 +703,21 @@ nycflights13::planes %>%
   tally() %>%
   arrange(desc(n))
 ```
+
+Next, we may want to get average seats by manufacturer.  Instead of using tally(), we're going to use n() which does the same thing except preserves the rest of the data.
+
+```{r}
+nycflights13::planes %>%
+  group_by(manufacturer) %>%
+  summarize(
+    n = n(),
+    mean_seats = mean(seats),
+    median_seats = median(seats),
+    sd_seats = sd(seats)
+  ) %>%
+  arrange(desc(n))
+```
+
 
 You can summarize variables by group too. The following example summarizes departure delays and distance flown by airline.
 
@@ -686,6 +733,7 @@ But this is a bit messy, and we may want to see the airlines actual names.
 ```{r}
 nycflights13::flights %>%
   dplyr::select(carrier, dep_delay, distance) %>%
+  # Here I'm 
   left_join(nycflights13::airlines, by = "carrier") %>%
   dplyr::select(-carrier) %>%
   group_by(name) %>%
@@ -788,7 +836,11 @@ nycflights13::weather %>%
     #panel.grid.minor = element_blank(),
     legend.position = "none"
   ) 
+```
 
+Above there looks like there's some weirdness at JFK
+
+```{r}
 nycflights13::weather %>%
   # start plotting commands
   ggplot(aes(x = time_hour, y = temp)) +

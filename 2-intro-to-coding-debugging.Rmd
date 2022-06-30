@@ -73,17 +73,30 @@ Here are steps you can use to resolve an error:
 
 ...
 
-Last) Read the R help files. In a normal list this would be 5, but I view these as a last resort, especially when you're learning as they can be dense and often difficult to read.
+Last) Read the R help files. In a normal list this would be 5, but I view these as a last resort, especially when you're learning as they can be dense and often difficult to read.  There are three ways to use this feature.  Suppose you are confused about how dplyr's (a package for manipulating data) select (a function that allows you to select or deselect a variable) function works.  You can get the help file in one of three ways.  
+
+1) type in **?select** in the Console
+2) type in **??select** in the Console
+3) type in **select** in the help pane (bottom right, fourth tab)
+
+You'll quickly see why this can be a pain.  First, ?select takes you to a helpfile that may not be the select function you're looking for.  Second, ??select and typing select in the help panel leaves you with well over 100 options.  But suppose you knew the exact select you cared about.  Type in 
+**?dplyr::select**      
+
+The most useful portion of this guide when you start using R is the Examples part.  So scroll down to that.  Once you use the example on toy data, then you can apply it to your own.  
 
 # How do I x in R?
 
-1) Use cheat sheets.  They're useful - use them. <https://www.rstudio.com/resources/cheatsheets/>
-
-2)  Look for vignettes - these are R documents that show how packages work
+1)  Look for vignettes - these are R documents that show how packages work
 
 -   e.g., <https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html>
 
-3)  Use the code from the vignette on the fake data
+
+2) Use cheat sheets.  They're useful - use them. <https://www.rstudio.com/resources/cheatsheets/>
+
+- For example, go here <https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf>.  Look at how to summarize a variable by group. 
+
+3)  Use the code from the cheat sheet/vignette on the fake data 
+
 4)  With a pencil and paper, compare the variables from the fake data to your data
 
 # Workflow
