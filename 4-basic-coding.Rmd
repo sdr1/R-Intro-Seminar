@@ -1398,7 +1398,7 @@ glance(m1)
 See <https://stats.oarc.ucla.edu/r/dae/logit-regression/> 
 
 ```{r}
-mydata <- read.csv("https://stats.idre.ucla.edu/stat/data/binary.csv")
+mydata <- read.csv("http://stats.idre.ucla.edu/stat/data/binary.csv")
 
 mylogit <- glm(admit ~ gre + gpa + rank, data = mydata, family = "binomial") 
 
@@ -1418,7 +1418,6 @@ See <https://uc-r.github.io/kmeans_clustering>
 
 # Links 
 
-The next section is in bold.
 
 [0 - Project Home](https://sdr1.github.io/R-Intro-Seminar)
 
