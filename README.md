@@ -34,15 +34,15 @@ It’s a program that allows users to analyze data, write academic papers, creat
 There are a million guides to R/stats Here are some of my favorites:
 
 -   For another general intro to R by Devin Judge-Lord (an awesome political scientist) <https://github.com/judgelord/PS811>
--   <https://bookdown.org/jgscott/DSGI/>
--   <https://rafalab.github.io/dsbook/getting-started.html>
--   <https://psu-psychology.github.io/psy-525-reproducible-research-2020/how_to/make-website-with-rstudio.html>
--   <https://egap.org/resource/10-things-to-know-about-reading-a-regression-table/>\
--   <https://stats.idre.ucla.edu/stata/output/regression-analysis/>
+-   Using Bookdown <https://bookdown.org/jgscott/DSGI/>
+-   Another R Guide <https://rafalab.github.io/dsbook/getting-started.html>
+-   Websites with R <https://psu-psychology.github.io/psy-525-reproducible-research-2020/how_to/make-website-with-rstudio.html>
+-   Regression Tables <https://egap.org/resource/10-things-to-know-about-reading-a-regression-table/>\
+-   More on Regression <https://stats.idre.ucla.edu/stata/output/regression-analysis/>
 -   *Mastering Metrics* and *Mostly Harmless Econometrics* by Angrist and Pische
     -   The "Mostly" in "Mostly Harmless" is a lie but it's an amazing book
 
-# This Course Is Boring, Give Me Something Better To Do
+# Non-R Links
 
 - [Liz Climo](https://instagram.com/lizclimo?igshid=YmMyMTA2M2Y=)
 - [Poorly Drawn Lines](https://poorlydrawnlines.com/)
