@@ -12,6 +12,10 @@ output:
 
 ---
 
+# esc gets you out of a lot of errors
+
+If you can't type a command because of lines and lines of the **+** symbol, just hit esc
+
 # Installing Packages
 
 ```{r setup, include=F}
@@ -334,7 +338,10 @@ storms
 
 # Then let's select the name, status, month, and wind variables 
 # I'm explicitly using dplyr::select here to show you what package this came from
+
+#' I.e. First, type the dataset that you want to analyze/do something to 
 storms %>%
+  # Now link the dataset to another command - here it's select 
   # select variables
   dplyr::select(name, status, wind, month) %>%
   # only take rows where the wind is greater than 75 mph
@@ -653,6 +660,7 @@ for(i in loop_over_this){
   print(i)
   # If we pretend that the i's are degrees Fahrenheit and we want to convert them into Celsius we can do the following
   C[i] <- (i - 32) * 5/9
+  print(C[i])
 }
 
 tibble(Fahrenheit = loop_over_this,
@@ -1201,7 +1209,7 @@ Think of this like the following:
 
 [$y_2$=1 $x_{n1}$ ... $x_nk$] [${\beta_n}$]+[$\epsilon_n$]
 
-OLS is the ordinary (as in all elements are treated equally) least squares estimate of the parameter $\beta$ that minimizes $\epsilon'$$\epsilon$. To save you a lot of time, the result is that $\hat{\beta} = (X'X)^{-1}X'Y$. I
+OLS is the ordinary (as in all elements are treated equally) least squares estimate of the parameter $\beta$ that minimizes $\epsilon'$$\epsilon$. To save you a lot of time, the result is that $\hat{\beta} = (X'X)^{-1}X'Y$. 
 
 We should dwell on the "ordinary" part for a second - this means that outliers can really screw with our results as an outlier is treated the same as any other observation. Maybe this is ok for your particular project, maybe it isn't.
 
