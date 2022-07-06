@@ -14,7 +14,17 @@ output:
 
 # esc gets you out of a lot of errors
 
-If you can't type a command because of lines and lines of the **+** symbol, just hit esc
+If you can't type a command because of lines and lines of the **+** symbol, just hit esc.
+
+For example, you may run into the following scenario:
+
+```{r, eval=F}
+data <- readr::read_csv("https://raw.githubusercontent.com/nppackages/binsreg/master/R/binsreg_sim.csv)
++ 
++ 
+```
+
+To get out of it, hit esc.  
 
 # Installing Packages
 
