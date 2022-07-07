@@ -109,6 +109,8 @@ Always write comments to yourself in your code. If you don't you'll have no clue
 
 ## Exercise 1
 
+Open a new tab in R (File -> New File -> R Script)
+
 Install the package 'here'
 
 Load the package using library(here)
