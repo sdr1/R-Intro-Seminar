@@ -198,6 +198,13 @@ c(4, 6, 7, TRUE, "X", NA)
 this_is_an_object <- c(4, 6, 7, TRUE, "X", NA)
 ```
 
+**==** - an equality test
+
+```{r}
+"A" == "A"
+"A" == "a"
+```
+
 **&** - and
 
 ```{r and}
