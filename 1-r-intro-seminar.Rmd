@@ -26,8 +26,8 @@ output:
 Note that if you don't have administrator privileges you won't be able to install R.
 
 -   To tell the type of Mac you have, go to the apple icon in the top left of the screen and click "About This Mac"
--   For an M1 Mac <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.2.1-arm64.pkg>
--   For an intel based mac <https://cran.r-project.org/bin/macosx/base/R-4.2.1.pkg>
+-   For an M1/M2 Mac <https://mirrors.nics.utk.edu/cran/bin/macosx/big-sur-arm64/base/R-4.3.1-arm64.pkg>
+-   For an intel based mac <https://mirrors.nics.utk.edu/cran/bin/macosx/big-sur-x86_64/base/R-4.3.1-x86_64.pkg>
 -   For Windows <https://cran.r-project.org/bin/windows/base/>
       - If you run into issues, start here <https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-install-R-for-Windows_003f>
 -   For Linux <https://cran.r-project.org/bin/linux/>
@@ -60,6 +60,20 @@ The next section is in bold.
 # Appendix 1: Integrating with Other Programming Languages
 
 You may wish to use other languages in addition to R. R and R Studio can do this, although sometimes the process of integrating another programming language takes too long and you're better of just using the languages separately.
+
+## Python 
+Rstudio and Python now can coexist peacefully.  This state of affairs may (or may not) last.  If you want to create documents that integrate both R and Python, follow the following steps:
+
+1. Download Anaconda
+2. In the Anaconda launcher, setup a new conda environment. I call mine "anaconda3"
+3. Install packages you care about there, such as tensorflow and keras (for machine learning)
+4. When you're in R, run the following commands
+
+```{r, eval = F, echo = T}
+install.packages('reticulate')
+library(reticulate)
+use_condaenv("/Users/stevenrashin/anaconda3/envs/anaconda3/bin/python")
+```
 
 ## Java (with M1 Macs)
 
